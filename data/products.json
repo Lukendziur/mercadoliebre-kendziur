@@ -1,0 +1,30 @@
+[
+ {
+  "name": "Cámara Nikon",
+  "price": "90000",
+  "descuento": "10",
+  "id": "5",
+  "image": "img-1620305399588.jpg"
+ },
+ {
+  "name": "Parlante Samsung",
+  "price": "5000",
+  "descuento": "30",
+  "id": "11",
+  "image": "img-1620227378580.jpg"
+ },
+ {
+  "name": "Cafetera Moulinex",
+  "price": "3000",
+  "descuento": "30",
+  "image": "img-1620222489041.jpg",
+  "id": 12
+ },
+ {
+  "name": "Reloj Tokio - Marca Relojes Ronin",
+  "price": "4000",
+  "descuento": "30",
+  "image": "img-1620222534499.jpg",
+  "id": 13
+ }
+]

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %>
+
+    <body>
+
+        <%- include('partials/header') %>
+    <main class="formularioR">
+
+
+            <h1 class="registroh1">Registro</h1>
+    
+        <!-- FORMULARIO -->
+        
+       
+        <form action="/user/Register" method="POST" class="registerform" enctype="multipart/form-data">
+            
+            
+            <div class="controlador-form">
+                <label for="name">Nombre y apellido</label> <!--Eso del is invalid es bootstrap..-->
+                <input type="text" name="name" id="name"  value="<%= locals.oldData ? oldData.name : null %>" class="var <%= locals.errors && errors.nombre ? 'is-invalid' : null %> "><!---Locals es una variable que tienen todos los controladores. Lógica: Si vino en locals  la variable errors y en esa variable errors yo tengo una porpiedad nombre, entonces., de errors, que es la variable q me llega, yo quiero, de la propiedad nombre, el mensaje.-->
+               
+                <% if(locals.errors && errors.name){ %>  
+                <div class="text-danger">
+                    <%= errors.name.msg %> 
+                </div>
+                
+                
+                    <%} %> 
+            </div>
+            <div class="controlador-form">
+                <label for="userName">Nombre de usuari@</label>
+                <input type="text" name="userName" id="userName" value="<%= locals.oldData ? oldData.userName : null %>" > 
+                <% if(locals.errors && errors.userName){ %>  
+                    <div class="text-danger">
+                        <%= errors.userName.msg %> 
+                    </div>
+                    
+                    
+                        <%} %> 
+            </div>
+            <div class="controlador-form">
+                <label for="fecha">Fecha de nacimiento</label>
+                <input type="date" name="fecha"  min="1920-01-01" id="fecha" value="<%= locals.oldData ? oldData.fecha : null %>">
+                <% if(locals.errors && errors.fecha){ %>  
+                    <div class="text-danger">
+                        <%= errors.fecha.msg %> 
+                    </div>
+                    
+                    
+                        <%} %> 
+            </div>
+            <div class="controlador-form">
+                <label for="domicilio">Domicilio</label>
+                <input type="text" name="addresse" id="domicilio" value="<%= locals.oldData ? oldData.adress : null %>">
+                <% if(locals.errors && errors.adress){ %>  
+                    <div class="text-danger">
+                        <%= errors.adress.msg %> 
+                    </div>
+                    
+                    
+                        <%} %> 
+            </div>
+            
+            <div class="contenedor-perfil">
+                <h4 id="perfil">Perfil del usuario</h4>
+                <label for="comprador" class="perfiles"><input type="radio" name="perfil" value="Comprador" id="comprador">
+                Comprador</label>
+                <label for="vendedor" class="perfiles" id="harta"><input type="radio" name="perfil" value="Vendedor" id="vendedor">
+                Vendedor</label>
+            </div>
+
+            <div class="contenedor-intereses">
+                <h4 id="intereses">Intereses</h4>
+                   
+                <label for="a" class="intereses">
+                    <input type="checkbox" name="intereses" value="Electro" id="a">
+                Electro
+                </label>                
+                <label for="b" class="intereses">
+                    <input type="checkbox" name="intereses" value="Moda" id="b">
+                Moda
+                </label>
+                <label for="c" class="intereses">
+                    <input type="checkbox" name="intereses" value="Hogar" id="c">
+                Hogar
+                </label>
+                <label for="d" class="intereses">
+                    <input type="checkbox" name="intereses" value="Juguetería" id="d">
+                Juguetería
+                </label>
+                <label for="e" class="intereses">
+                    <input type="checkbox" name="intereses" value="Vida Sana" id="e">
+                Vida sana
+                </label>
+            </div>
+              
+            
+           
+
+            <div class="controlador-form">
+                <h4 id="userPick">Foto de usuario</h4>
+                <input type="file" name="avatar" value="<%= locals.oldData ? oldData.avatar : null %>">
+                <% if(locals.errors && errors.avatar){ %>  
+                    <div class="text-danger">
+                        <%= errors.avatar.msg %> 
+                    </div>
+                    
+                    
+                        <%} %> 
+            </div>
+            <div class="controlador-form">
+                <label for="contraseña">Contraseña</label>
+                <input type="password" name="password" minlength="6" maxlength="15" id="contraseña" >
+                <% if(locals.errors && errors.password){ %>  
+                    <div class="text-danger">
+                        <%= errors.password.msg %> 
+                    </div>
+                    
+                    
+                        <%} %> 
+            </div>
+            <div class="controlador-form">
+                <label for="confir-contraseña">Confirmar contraseña</label>
+                <input type="password" minlength="6" maxlength="15" id="confir-contraseña">
+            </div>
+           <!--
+            <div class="controlador-form"> 
+            <button type ="reset" class="button">Borrar</button>
+          </div>
+        
+          <div class="controlador-form"> 
+            <button type ="submit">Enviar</button>
+          </div>--->
+           
+          <div class="contenedorBotones">
+            <button type ="reset">Borrar</button>
+            <button type ="submit">Registrarse</button>
+         </div>
+        
+        </form>
+
+    </main>
+
+</body>
+<footer>
+    
+<aside class="parrafosfooter">
+<section class="articuloWidth">
+<article>
+    <div class= "logo"> <i class="fas fa-credit-card"></i></div>
+    <h3>Pagá con tarjeta o en efectivo</h3>
+    <p>Con Mercado Liebre Cash, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y siempre es seguro!</p>
+</article>
+</section>
+
+   
+
+<section  class="articuloWidth">
+<article>
+    <div class= "logo"> <i class="fas fa-gift"></i> </div>
+    <h3>Envío gratis desde $2.500</h3>
+    <p>Solo por estar registrad@ en Mercado Liebre tenés envíos gratis en miles de productos. Es un beneficio de Mercado Puntos.</p>
+</article>
+</section>
+
+  
+
+<section  class="articuloWidth">
+<article>
+   <div class= "logo"><i class="fas fa-user-shield"></i></div>
+   <h3>Seguridad, de principio a fin</h3>
+   <p>¿No te gusta? ¡Devolvelo! En Mercado Liebre, no hay nada que no puedas hacer, porque estás siempre protegid@.</p>
+</article>
+</section>
+</aside>
+    
+
+
+
+<section>
+<article>
+    <h5>Copyright © 1999-2021 MercadoLiebre S.R.L.</h5>
+</article>
+</section>
+</footer>
+</html>

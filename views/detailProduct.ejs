@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+<body>
+    <%- include('partials/header') %>
+
+
+    <main class="productDetail-main">
+        <h1>Detalle de Producto</h1>
+        <section class="lastView">
+            <figure class="imageProduct">
+                <img src="/images/<%= product.image %>" alt="" class="product_img">
+            </figure>
+            <div class="articulo">
+                <div class="nombres">
+                <h3>
+                    <%= product.name %>
+                </h3>
+                <h3>$ <%= product.price %>
+                </h3>
+                <p>
+                   % <%= product.descuento %>
+                </p>
+            </div>
+              
+                <a href="/products/<%= product.id %>/edit" class="button1">Editar</a>
+
+                <form class="form is-inline" action="/products/<%= product.id %>?_method=DELETE" method="POST">
+                    <button type="submit" class="button1">Borrar</button>
+                </form>
+            </div>
+
+        </section>
+
+    </main>
+
+    <%- include('partials/footer') %>
+
+</body>
+</html>

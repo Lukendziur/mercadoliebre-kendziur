@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %>
+
+    <body>
+
+        <%- include('partials/header') %>
+
+            <main class="mainCreate">
+                <h3>Nuevo producto</h3>
+                <section class="ultima-visitaP">
+    
+                        <form action="/products/store" method="POST" enctype="multipart/form-data">
+
+                            <div class="field">
+                                <label for="name">Nombre</label>
+                                <div class="control1">
+                                    <input type="text" name="name" value="<%= locals.oldData ? oldData.name : null %>">
+                                    <% if(locals.errors && errors.name){ %>  
+                                        <div class="text-danger">
+                                            <%= errors.name.msg %> 
+                                        </div>                                     
+                                        
+                                    <%} %> 
+                                
+                                
+                                </div>
+                             
+                            </div>
+
+
+                            <div class="field">
+                                <label for="image">Imagen</label>
+                                <div class="control">
+                                    <input type="file" name="image" value="<%= locals.oldData ? oldData.image : null %>">
+                                    <% if(locals.errors && errors.image){ %>  
+                                        <div class="text-danger">
+                                            <%= errors.image.msg %> 
+                                        </div>                                     
+                                        
+                                    <%} %> 
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label for="price">Precio</label>
+                                <div class="control2">
+                                    <input type="text" name="price" value="<%= locals.oldData ? oldData.price : null %>">
+                                    <% if(locals.errors && errors.price){ %>  
+                                        <div class="text-danger">
+                                            <%= errors.price.msg %> 
+                                        </div>                                     
+                                        
+                                    <%} %> 
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label for="descuento">Descuento</label>
+                                <div class="control3">
+                                   
+                                    <input type="text" name="descuento">
+                                </div>
+                            </div>
+
+
+                            <div class="field">
+                                <div class="control">
+                                    <button type="submit">Crear producto</button>
+                                </div>
+                            </div>
+                        </form>
+
+
+                    </div>
+                </section>
+
+            </main>
+            <%- include('partials/footer') %>
+
+    </body>
+
+</html>

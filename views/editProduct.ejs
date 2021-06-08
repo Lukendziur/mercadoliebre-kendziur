@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head') %>
+
+    <body>
+
+        <%- include('partials/header') %>
+
+
+            <main class="mainEdit">
+                <h3>Editar producto</h3>
+                <section class="ultima-visita">
+
+                    <form action="/products/<%=product.id %>?_method=PUT" method="POST" enctype="multipart/form-data" >
+                        
+
+                                            
+                        <div class="field">
+                            <label for="name">Nombre</label>
+                            <div class="control1">
+
+                                <input type="text" name="name" value="<%=product.name %>">
+                                <% if(locals.errors && errors.name){ %>
+                                    <div><%= errors.name.msg %></div>
+                                <% } %>
+                               
+                            </div>
+
+                        </div>
+
+                       <div class="field">
+                            <label for="image">Imagen</label>
+                            <div class="control">
+                                <input type="file" name="image" class="product_img" value="<%= product.image %>">
+                                <!-- <input type="hidden" name="oldImage" value="<%= product.image %>"> -->
+                               
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="price">Precio</label>
+                            <div class="control2">
+                                <input type="text" name="price" value="<%= product.price %>">
+                                <% if(locals.errors && errors.price){ %>
+                                    <div><%= errors.price.msg %></div>
+                                <% } %>
+                             
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="descuento">descuento</label>
+                            <div class="control3">
+
+                                <input type="text" name="descuento"  value="<%= product.descuento %>">
+                               
+                           
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <button type="submit">Editar producto</button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+
+
+            </main>
+            <%- include('partials/footer') %>
+
+
+    </body>
+
+</html>

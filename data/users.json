@@ -1,0 +1,16 @@
+[
+ {
+  "id": 1,
+  "name": "Lucila Kendziur",
+  "userName": "Luken",
+  "fecha": "1996-07-17",
+  "addresse": "9 de julio 939",
+  "perfil": "Comprador",
+  "intereses": [
+   "Electro",
+   "Moda"
+  ],
+  "password": "$2a$10$KLdTO0.F3uCVixVslAb7aurWoJcFfUJQybY70zDxaY3iJNgNANJn6",
+  "avatar": "1620677784040_img.jpg"
+ }
+]
